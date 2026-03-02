@@ -1,0 +1,31 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Load results
+data = pd.read_csv("../results/topsis_scores.csv")
+
+# Bar Chart
+plt.figure()
+plt.bar(data["Model"], data["TOPSIS_Score"])
+plt.xlabel("Models")
+plt.ylabel("TOPSIS Score")
+plt.title("TOPSIS Score Comparison")
+plt.savefig("../results/bar_chart.png")
+plt.close()
+
+# Radar Chart
+labels = data["Model"].values
+scores = data["TOPSIS_Score"].values
+
+angles = np.linspace(0, 2 * np.pi, len(labels), endpoint=False)
+scores = np.concatenate((scores, [scores[0]]))
+angles = np.concatenate((angles, [angles[0]]))
+
+plt.figure()
+plt.polar(angles, scores)
+plt.fill(angles, scores, alpha=0.25)
+plt.xticks(angles[:-1], labels)
+plt.title("Radar Chart of TOPSIS Scores")
+plt.savefig("../results/radar_chart.png")
+plt.close()
