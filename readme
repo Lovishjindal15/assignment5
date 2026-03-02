@@ -1,0 +1,77 @@
+# 📚 Assignment 05 — Text Classification (TOPSIS Method)
+
+---
+
+## 🎯 Objective
+
+The objective of this assignment is to identify the best pre-trained model for Text Classification using the TOPSIS (Technique for Order Preference by Similarity to Ideal Solution) method.
+
+TOPSIS is a multi-criteria decision-making (MCDM) technique that ranks alternatives based on their closeness to the ideal solution and distance from the worst solution.
+
+---
+
+## 🤖 Models Considered
+
+The following pre-trained NLP models were evaluated:
+
+- BERT
+- RoBERTa
+- DistilBERT
+- ALBERT
+- XLNet
+
+---
+
+## 📊 Evaluation Criteria
+
+| Criterion | Type |
+|-----------|------|
+| Accuracy | Benefit |
+| F1-Score | Benefit |
+| Inference Time (ms) | Cost |
+| Model Size (MB) | Cost |
+| Training Time (hrs) | Cost |
+
+---
+
+## ⚖️ Criteria Weights
+
+| Criterion | Weight |
+|-----------|--------|
+| Accuracy | 0.30 |
+| F1-Score | 0.25 |
+| Inference Time | 0.15 |
+| Model Size | 0.15 |
+| Training Time | 0.15 |
+
+---
+
+## 🧮 Methodology (TOPSIS Steps)
+
+1. Construct the decision matrix
+2. Normalize the decision matrix
+3. Multiply normalized values by weights
+4. Determine ideal best and ideal worst solutions
+5. Calculate distance from ideal best and worst
+6. Compute TOPSIS score
+7. Rank the models
+
+---
+
+## 📈 Results
+
+| Rank | Model | TOPSIS Score |
+|------|-------|--------------|
+| 1 | DistilBERT | 0.8968 |
+| 2 | ALBERT | 0.8639 |
+| 3 | BERT | 0.4801 |
+| 4 | RoBERTa | 0.2401 |
+| 5 | XLNet | 0.0531 |
+
+---
+
+## 🏆 Conclusion
+
+Using the TOPSIS multi-criteria decision-making technique, DistilBERT was identified as the most suitable pre-trained model for text classification.
+
+Although RoBERTa achieved higher accuracy, DistilBERT provided the best balance between performance and computational efficiency when considering inference time, model size, and training cost.
